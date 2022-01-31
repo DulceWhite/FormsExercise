@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey</title>
 </head>
+
 <body>
     <form>
 
         <fieldset>
-            
 
-                <legend>Customer Experience Survey</legend>
-                <label for="storeNumber">Store Number</label>
-                <select name="storeNumber" id="storeNumber">
-                    <option value="selectAstore" hidden>Select a store</option>
-                    <option value="3109">3109</option>
-                    <option value="2421">2421</option>
-                    <option value="5357">5357</option>
-                </select>
-                <br>
-            
+
+            <legend>Customer Experience Survey</legend>
+            <label for="storeNumber">Store Number</label>
+            <select name="storeNumber" id="storeNumber">
+                <option value="selectAstore" hidden>Select a store</option>
+                <option value="2421">2421</option>
+                <option value="3109">3109</option>
+                <option value="5357">5357</option>
+            </select>
+            <br>
+
             <fieldset>
                 <legend>When you visited:</legend>
                 <label for="dateVisited">Date Visited</label>
-                <!-- 'Value' attribute makes the calendar start at that specified date. -->
-                <input type="date" id="dateVisited" value="2022-01-01"></input>
+                <!-- min and max attributes make the calendar start and end at that specified range. -->
+                <input type="date" id="dateVisited" min="2022-01-01" max="2022-12-31" value="2022-01-01"></input>
                 <br>
                 <label for="time">Time</label>
-                <input type="time"  id="time"></input>
+                <input type="time" id="time"></input>
             </fieldset>
 
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" placeholder="Name">
-            <br>
-            <label for="eMail">Email</label>
-            <input type="email" id="eMail" placeholder="Email">
-            <br>
+            <div>
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Name">
+                <br>
+                <label for="eMail">Email</label>
+                <input type="email" id="eMail" placeholder="Email">
+                <br>
+            </div>
 
             <fieldset>
                 <legend>How would you rate your level of satisfaction with your visit?</legend>
-                <input type="radio" id="satisfied" name="satisfaction">
+                <input type="radio" id="satisfied" name="satisfied">
                 <label for="satisfied">Satisfied</label>
                 <br>
                 <!-- checed attribute makes the radio be selected as starting setting-->
-                <input type="radio" id="neither" name="satisfaction" checked>
+                <input type="radio" id="neither" name="satisfied" checked>
                 <label for="neither">Neither Satisfied nor Dissatisfied</label>
                 <br>
-                <input type="radio" id="dissatisfied" name="satisfaction">
+                <input type="radio" id="dissatisfied" name="satisfied">
                 <label for="dissatisfied">Dissatisfied</label>
             </fieldset>
             <label for="experience">Tell us about your experience:</label>
@@ -60,18 +64,21 @@
             <!-- Min and Max are the limits of numbers displayed in the scroll option -->
             <input type="number" id="timesVisited" min="1" max="30">
             <br>
-            <input type="checkbox" id="contactCustomer" name="checkbox">
-            <label for="contactCostumer">Please check the box if you would be willing to be contacted about your experience.</label>
+            <input type="checkbox" id="contactCustomer" name="checkbox" required>
+            <label for="contactCostumer">Please check the box if you would be willing to be contacted about your
+                experience.</label>
             <br>
             <label for="password">Password</label>
             <!-- minlenght and maxlenght attributes set the limit of characters required-->
-            <!-- PATTERN attribute specifies a regular expression that the input will be chacked against on for submission  -->
-            <input type="password" id="password" minlength="5" maxlength="10" pattern=".{5,10}"title="Please enter password that is 5 to 10 characters in length" required>
+            <!-- PATTERN attribute specifies a regular expression that the input will be chacked against on for submission, pattern makes it required,  -->
+            <input type="password" id="password" minlength="5" maxlength="10" pattern=".{5,10}"
+                title="Please enter password that is 5 to 10 characters in length">
             <br>
             <input type="reset">
             <input type="submit">
         </fieldset>
     </form>
-    
+
 </body>
+
 </html>
